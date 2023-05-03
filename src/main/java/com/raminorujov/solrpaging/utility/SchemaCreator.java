@@ -1,10 +1,9 @@
 package com.raminorujov.solrpaging.utility;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.apache.solr.client.solrj.request.schema.SchemaRequest;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -15,8 +14,8 @@ import static com.raminorujov.solrpaging.utility.SolrUtility.*;
 /**
  * Created by raminorujov on 23/06/2017.
  */
+@Slf4j
 public class SchemaCreator {
-    private static final Logger LOG = LoggerFactory.getLogger(SchemaCreator.class);
 
     public static void main(String[] args) throws Exception {
         String solrUrl = "http://localhost:8983/solr/books";
@@ -70,6 +69,6 @@ public class SchemaCreator {
         addFieldRequest = new SchemaRequest.AddField(fieldAttributes);
         addFieldRequest.process(solrClient);
 
-        LOG.info("Created solr schema");
+        log.info("Created solr schema");
     }
 }

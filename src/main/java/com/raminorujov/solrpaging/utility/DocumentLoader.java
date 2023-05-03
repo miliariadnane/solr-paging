@@ -14,7 +14,6 @@ import static com.raminorujov.solrpaging.utility.SolrUtility.loadFromResource;
  * Created by raminorujov on 23/06/2017.
  */
 public class DocumentLoader {
-    private static final Logger LOG = LoggerFactory.getLogger(DocumentLoader.class);
 
     public static void main(String[] args) throws Exception {
         DocumentLoader loader = new DocumentLoader();

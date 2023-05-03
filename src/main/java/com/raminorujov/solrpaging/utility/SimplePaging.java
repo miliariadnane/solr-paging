@@ -1,14 +1,13 @@
 package com.raminorujov.solrpaging.utility;
 
 import com.raminorujov.solrpaging.domain.Book;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrQuery.ORDER;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocumentList;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +18,8 @@ import static com.raminorujov.solrpaging.domain.Constants.ID;
 /**
  * Created by raminorujov on 23/06/2017.
  */
+@Slf4j
 public class SimplePaging {
-    private static final Logger LOG = LoggerFactory.getLogger(SimplePaging.class);
 
     public static void main(String[] args) throws Exception {
         String core = "books";
@@ -42,8 +41,8 @@ public class SimplePaging {
             books.add(SolrUtility.convert(document));
         });
 
-        LOG.info("Got {} books from solr", results.getNumFound());
-        LOG.info("Books = {}", books);
+        log.info("Got {} books from solr", results.getNumFound());
+        log.info("Books = {}", books);
 
     }
 }

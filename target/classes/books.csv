@@ -1,0 +1,17 @@
+book_id,title,author,category,publisher,publish_year
+1,AWS Lambda in Action,Danilo Poccia,cloud,Manning,2017
+2,Data Science from Scratch,Joel Grus,data science,OReilly,2015
+3,Algorithms in a Nutshell 2nd edition,George T.Heineman,programming,OReilly,2016
+4,Programming Scala 2nd edition,Dean Wampler,programming,OReilly,2015
+5,Programming in Scala 3rd edition,Martin Odersky,programming,Artima,2016
+6,Advanced Analytics with Spark,Sandy Ryza,big data,OReilly,2015
+7,Big Data Analytics with Spark,Mohammed Guller,big data,Apress,2015
+8,Learning Spark,Holden Karau,big data,OReilly,2015
+9,Pro Spark Streaming,Zubair Nabi,big data,Apress,2016
+10,The Algorithm Design Manual Second Edition,Steven Skiena,algorithms,Springer,2008
+11,Hadoop Security,Ben Spivey,big data,OReilly,2015
+12,Programming Hive,Jason Rutberglen,big data,OReilly,2012
+13,Practical Hive,Scott Shaw,big data,Apress,2016
+14,Storm Applied,Sean Allen,big data,Manning,2015
+15,Data Algorithms,Mahmoud Parsian,data science,OReilly,2015
+16,The Kimball Group Reader:Relentlessly Practical Tools for Data warehousing and Business Intelligence 2nd edition,Ralph Kimball,datawarehouse,Wiley,2015

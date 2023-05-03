@@ -1,6 +1,7 @@
 package com.raminorujov.solrpaging.utility;
 
 import com.raminorujov.solrpaging.domain.Book;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
@@ -20,8 +21,8 @@ import static org.apache.solr.common.params.CursorMarkParams.CURSOR_MARK_START;
 /**
  * Created by raminorujov on 23/06/2017.
  */
+@Slf4j
 public class AdvancedPaging {
-    private static final Logger LOG = LoggerFactory.getLogger(AdvancedPaging.class);
 
     public static void main(String[] args) throws Exception {
         String core = "books";
@@ -44,10 +45,10 @@ public class AdvancedPaging {
         });
 
         String cursorMark = response.getNextCursorMark();
-        LOG.info("next cursor mark = {}", cursorMark);
+        log.info("next cursor mark = {}", cursorMark);
 
-        LOG.info("Got {} books from solr", results.getNumFound());
-        LOG.info("Books = {}", books);
+        log.info("Got {} books from solr", results.getNumFound());
+        log.info("Books = {}", books);
 
     }
 }

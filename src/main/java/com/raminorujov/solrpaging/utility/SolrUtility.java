@@ -1,6 +1,7 @@
 package com.raminorujov.solrpaging.utility;
 
 import com.raminorujov.solrpaging.domain.Book;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.solr.client.solrj.SolrClient;
@@ -9,8 +10,6 @@ import org.apache.solr.client.solrj.request.UpdateRequest;
 import org.apache.solr.client.solrj.response.CoreAdminResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrInputDocument;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileReader;
@@ -27,15 +26,15 @@ import static com.raminorujov.solrpaging.domain.Constants.PUBLISH_YEAR;
 /**
  * Created by raminorujov on 23/06/2017.
  */
+@Slf4j
 public class SolrUtility {
-    private static final Logger LOG = LoggerFactory.getLogger(SolrUtility.class);
 
     public static void clearSolrDocs(SolrClient solrClient) throws Exception {
         UpdateRequest req = new UpdateRequest();
         req.setDeleteQuery(Collections.singletonList("*:*"));
         solrClient.request(req);
         solrClient.commit();
-        LOG.info("Cleared all solr docs");
+        log.info("Cleared all solr docs");
     }
 
     public static void createCore(SolrClient solrClient, String core) throws Exception {
@@ -46,9 +45,9 @@ public class SolrUtility {
             aCreateRequest.setCoreName(core);
             aCreateRequest.setInstanceDir(core);
             aCreateRequest.process(solrClient);
-            LOG.info("Created core {}", core);
+            log.info("Created core {}", core);
         } else {
-            LOG.info("Core name {} already exists", core);
+            log.info("Core name {} already exists", core);
         }
     }
 
@@ -56,9 +55,9 @@ public class SolrUtility {
         CoreAdminResponse response = CoreAdminRequest.getStatus(core, solrClient);
         if (response.getCoreStatus(core).size() != 0) {
             CoreAdminRequest.unloadCore(core, true, true, solrClient);
-            LOG.info("Deleted core {}", core);
+            log.info("Deleted core {}", core);
         } else {
-            LOG.info("Core {} does not exist", core);
+            log.info("Core {} does not exist", core);
         }
     }
 
@@ -98,7 +97,7 @@ public class SolrUtility {
 
         solrClient.add(solrDocs);
         solrClient.commit();
-        LOG.debug("Added {} books into solr", solrDocs.size());
+        log.debug("Added {} books into solr", solrDocs.size());
     }
 
     public static void loadFromResource(SolrClient solrClient, URI resource) throws Exception {

@@ -4,36 +4,30 @@ import com.raminorujov.solrpaging.domain.Book;
 import com.raminorujov.solrpaging.domain.PagingData;
 import com.raminorujov.solrpaging.domain.PagingResponse;
 import com.raminorujov.solrpaging.utility.SolrUtility;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrQuery.ORDER;
-import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocumentList;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.raminorujov.solrpaging.domain.Constants.BOOK_ID;
 import static com.raminorujov.solrpaging.domain.Constants.ID;
 import static org.apache.solr.client.solrj.SolrQuery.ORDER.asc;
 import static org.apache.solr.client.solrj.SolrQuery.ORDER.desc;
 import static org.apache.solr.common.params.CursorMarkParams.CURSOR_MARK_PARAM;
-import static org.apache.solr.common.params.CursorMarkParams.CURSOR_MARK_START;
 
 /**
  * Created by raminorujov on 23/06/2017.
  */
 @Service
+@Slf4j
 public class SolrPagingService {
-
-    private static final Logger LOG = LoggerFactory.getLogger(SolrPagingService.class);
 
     @Value("${solr.url}")
     private String solrUrl;
@@ -76,13 +70,13 @@ public class SolrPagingService {
                 books.add(SolrUtility.convert(document));
             });
 
-            LOG.info("Got {} books from solr", results.getNumFound());
+            log.info("Got {} books from solr", results.getNumFound());
 
             response.setBooks(books);
             response.setPagingData(pagingData);
 
         } catch (Exception e) {
-            LOG.error("Error getting books from solr", e);
+            log.error("Error getting books from solr", e);
             throw new RuntimeException("Error getting books from solr", e);
         }
 
@@ -124,13 +118,13 @@ public class SolrPagingService {
                 books.add(SolrUtility.convert(document));
             });
 
-            LOG.info("Got {} books from solr", results.getNumFound());
+            log.info("Got {} books from solr", results.getNumFound());
 
             response.setBooks(books);
             response.setPagingData(pagingData);
 
         } catch (Exception e) {
-            LOG.error("Error getting books from solr", e);
+            log.error("Error getting books from solr", e);
             throw new RuntimeException("Error getting books from solr", e);
         }
 
