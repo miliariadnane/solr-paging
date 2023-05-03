@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import static com.raminorujov.solrpaging.domain.Constants.*;
 
 /**
- * Created by raminorujov on 23/06/2017.
+ * Updated By miliariadnane on 03/05/2023
  */
 
 @RestController

@@ -9,10 +9,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static com.raminorujov.solrpaging.domain.Constants.*;
-import static com.raminorujov.solrpaging.utility.SolrUtility.*;
+import static com.raminorujov.solrpaging.utility.SolrUtility.clearSolrDocs;
 
 /**
- * Created by raminorujov on 23/06/2017.
+ * Updated By miliariadnane on 03/05/2023
  */
 @Slf4j
 public class SchemaCreator {

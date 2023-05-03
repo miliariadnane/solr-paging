@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
- * Created by raminorujov on 23/06/2017.
+ * Updated By miliariadnane on 03/05/2023
  */
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 @Data @ToString

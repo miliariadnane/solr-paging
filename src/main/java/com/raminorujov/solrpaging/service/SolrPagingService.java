@@ -11,7 +11,6 @@ import org.apache.solr.client.solrj.SolrQuery.ORDER;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocumentList;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,17 +22,17 @@ import static org.apache.solr.client.solrj.SolrQuery.ORDER.desc;
 import static org.apache.solr.common.params.CursorMarkParams.CURSOR_MARK_PARAM;
 
 /**
- * Created by raminorujov on 23/06/2017.
+ * Updated By miliariadnane on 03/05/2023
  */
 @Service
 @Slf4j
 public class SolrPagingService {
 
-    @Value("${solr.url}")
-    private String solrUrl;
+//    @Value("${solr.url}")
+//    private String solrUrl;
 
     public SolrClient getSolrClient() {
-        SolrClient solrClient = new HttpSolrClient.Builder(solrUrl).build();
+        SolrClient solrClient = new HttpSolrClient.Builder("http://localhost:8983/solr").build();
         return solrClient;
     }
 

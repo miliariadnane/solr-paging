@@ -1,15 +1,10 @@
 package com.raminorujov.solrpaging;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * Created by raminorujov on 23/06/2017.
+ * Updated By miliariadnane on 03/05/2023
  */
 @SpringBootApplication
 public class SolrPagingApplication {

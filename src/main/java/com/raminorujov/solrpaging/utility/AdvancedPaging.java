@@ -7,8 +7,6 @@ import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocumentList;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +17,7 @@ import static org.apache.solr.common.params.CursorMarkParams.CURSOR_MARK_PARAM;
 import static org.apache.solr.common.params.CursorMarkParams.CURSOR_MARK_START;
 
 /**
- * Created by raminorujov on 23/06/2017.
+ * Updated By miliariadnane on 03/05/2023
  */
 @Slf4j
 public class AdvancedPaging {

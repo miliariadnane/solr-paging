@@ -2,8 +2,6 @@ package com.raminorujov.solrpaging.utility;
 
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.net.URI;
 
@@ -11,7 +9,7 @@ import static com.raminorujov.solrpaging.utility.SolrUtility.clearSolrDocs;
 import static com.raminorujov.solrpaging.utility.SolrUtility.loadFromResource;
 
 /**
- * Created by raminorujov on 23/06/2017.
+ * Updated By miliariadnane on 03/05/2023
  */
 public class DocumentLoader {
 

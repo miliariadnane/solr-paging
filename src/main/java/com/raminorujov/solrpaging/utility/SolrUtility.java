@@ -20,11 +20,9 @@ import java.util.Collections;
 import java.util.List;
 
 import static com.raminorujov.solrpaging.domain.Constants.*;
-import static com.raminorujov.solrpaging.domain.Constants.PUBLISHER;
-import static com.raminorujov.solrpaging.domain.Constants.PUBLISH_YEAR;
 
 /**
- * Created by raminorujov on 23/06/2017.
+ * Updated By miliariadnane on 03/05/2023
  */
 @Slf4j
 public class SolrUtility {
