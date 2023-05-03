@@ -13,9 +13,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 @SpringBootApplication
 public class SolrPagingApplication {
-
-    private static final Logger LOG = LoggerFactory.getLogger(SolrPagingApplication.class);
-
     public static void main(String[] args) {
         SpringApplication.run(SolrPagingApplication.class, args);
     }

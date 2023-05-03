@@ -1,0 +1,8 @@
+server:
+  context-path: /solr-sb-bookstore
+  port: 8080
+  application:
+    name: books
+
+solr:
+  host: http://localhost:8983/solr
