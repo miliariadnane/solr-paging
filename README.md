@@ -2,12 +2,12 @@ Sample Spring Boot project demonstrating basic and advanced paging features of A
 
 Instructions:
 
-Step 1.Download Apache Solr latest version(currently 6.6.0) from http://lucene.apache.org/solr/mirrors-solr-latest-redir.html
+Step 1.Download Apache Solr latest version(currently 9.2.1) from http://lucene.apache.org/solr/mirrors-solr-latest-redir.html
 Refer to Solr quick start doc: http://lucene.apache.org/solr/quickstart.html
 
 ls solr*
-tar -xvf solr-6.6.0.tgz
-cd solr-6.6.0
+tar -xvf solr-9.2.1.tgz
+cd solr-9.2.1
 bin/solr start -e cloud -noprompt
 bin/solr create -c books
 open url http://localhost:8983/solr/#/books/ in browser
@@ -21,9 +21,9 @@ Run DocumentLoader class to load sample data books.csv resource
 
 Step 4.Run SpringBootApplication class to start web project
 
-Step 5.Open url http://localhost:8080/solr-paging/basic-paging?page_size=10&page_num=1&sort_col=book_id&sort_dir=1
+Step 5.Open url http://localhost:8080/solr-sb-bookstore/basic-paging?page_size=10&page_num=1&sort_col=book_id&sort_dir=1
 
-Step 6.Open url http://localhost:8080/solr-paging/advanced-paging?page_size=10&sort_col=book_id&sort_dir=1
+Step 6.Open url http://localhost:8080/solr-sb-bookstore/advanced-paging?page_size=10&sort_col=book_id&sort_dir=1
 
 
 Basic paging parameters:
@@ -32,7 +32,7 @@ page_num page number to get, default 1
 sort_col sorting column, default id
 sort_dir sorting direction, 1 asc, -1 desc
 
-GET http://localhost:8080/solr-paging/basic-paging?page_size=10&page_num=1&sort_col=book_id&sort_dir=1
+GET http://localhost:8080/solr-sb-bookstore/basic-paging?page_size=10&page_num=1&sort_col=book_id&sort_dir=1
 
 
 Advanced paging parameters:
@@ -41,10 +41,10 @@ sort_col sorting column, default id
 sort_dir sorting direction, 1 asc, -1 desc
 cursor_mark continue from this point, default *
 
-GET 1st page http://localhost:8080/solr-paging/advanced-paging?page_size=10&sort_col=book_id&sort_dir=1
+GET 1st page http://localhost:8080/solr-sb-bookstore/advanced-paging?page_size=10&sort_col=book_id&sort_dir=1
 
 Use cursor_mark from first response before retrieving next page
-GET next page: http://localhost:8080/solr-paging/advanced-paging?page_size=10&sort_col=book_id&sort_dir=1&cursor_mark=AoIhMz8FMzhkMzE4ODUtODNmNS00MzY4LWI4OTQtMTNjYzU4NTQ3MDVh
+GET next page: http://localhost:8080/solr-sb-bookstore/advanced-paging?page_size=10&sort_col=book_id&sort_dir=1&cursor_mark=AoIhMz8FMzhkMzE4ODUtODNmNS00MzY4LWI4OTQtMTNjYzU4NTQ3MDVh
 
 Response body:
 {
